@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en" class="unsupported"><![endif]-->
+<!--[if IE 7 ]><html xmlns:fb="http://ogp.me/ns/fb#" lang="en" class="ie7"><![endif]-->
+<!--[if IE 8 ]><html xmlns:fb="http://ogp.me/ns/fb#" lang="en" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+
+	<!--
+	JudyCares.com
+	Version 2
+	-->
+	
+	<title>{site_name}{if embed:html_title}: {embed:html_title}{/if}</title>
+
+	<meta charset="UTF-8">
+	
+	{if embed:meta_description}
+		<meta name="description" content="{embed:meta_description}">
+	{if:elseif embed:meta_description_slug}
+		<meta name="description" content="{embed='_includes/static_copy_for' url_title='{embed:meta_description_slug}' strip_html='yes'}">
+	{/if}
+
+	<link rel="stylesheet" href="/assets/css/main.css" />
+
+	<script type="text/javascript" src="//use.typekit.net/myo5hwu.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body>
+
+	<div class="wrapper">
+
+		<header>
+			<a href="/" class="logo">Judy<em>Cares</em></a>
+			<nav class="main_menu">
+				<li>
+					<a href="/articles/"
+					{if segment_1 == "articles"} class="active"{/if}
+					>
+						Articles
+					</a>
+				</li>
+				<li>
+					<a href="/therapy/"
+					{if segment_1 == "therapy"} class="active"{/if}
+					>
+						Therapy
+					</a>
+				</li>
+				<li>
+					<a href="/speaking/"
+					{if segment_1 == "speaking"} class="active"{/if}
+					>
+						Speaking
+					</a>
+				</li>
+				<li>
+					<a href="/about/"
+					{if segment_1 == "about"} class="active"{/if}
+					>
+						About
+					</a>
+				</li>
+				<li>
+					<a href="/contact/"
+					{if segment_1 == "contact"} class="active"{/if}
+					>
+						Contact
+					</a>
+				</li>
+			</nav>
+		</header>
+
+		<div class="main">

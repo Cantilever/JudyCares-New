@@ -1,0 +1,60 @@
+{embed="_embeds/_header"}
+
+<div class="line">
+	<section class="headline-block" data-alignment="right">
+		<div class="headline-block">
+			{exp:ed_imageresizer image="/assets/img/judy-profile.jpg" maxWidth="880" forceWidth="yes" cropratio="16:9"}
+			<div class="text">
+				<div class="text-inner">
+					<h1 class="h1">Welcome</h1>
+					<h2 class="h5">Judy Fujimura is a marriage and family therapist, writer, and lecturer in Princeton, NJ.</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="line">
+		<div class="mod-wrapper">
+			<div class="unit size1of2">
+				<div class="mod">
+					<div class="hd">
+						<h3 class="h4">Recent Articles</h3>
+					</div>
+					<div class="bd">
+						<ul class="list" data-padding="tight">
+							{exp:weblog:entries weblog="articles" limit="3"}
+								<li>
+									<a href="/articles/{url_title}/">{title}</a><br/>
+									<em>{article_subtitle}</em>
+								</li>
+							{/exp:weblog:entries}
+							<li><a href="/articles"><em>View All &rarr;</em></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="unit size1of2">
+				<div class="mod">
+					<div class="hd">
+						<h3 class="h4">Therapy</h3>
+					</div>
+					<div class="bd">
+						<p>Judy offers counciling for individuals and families.</p>
+						<p>For more information about appointments, please <a href="/therapy/">click here</a></p>
+					</div>
+				</div>
+				<div class="mod">
+					<div class="hd">
+						<h3 class="h4">Speaking</h3>
+					</div>
+					<div class="bd">
+						<p>Judy offers seminars and classes that equip individuals, couples, and parents to build great relationships, and to better nurture the people they love.</p>
+						<p>For a sample lecture description and video, please <a href="/speaking/">click here</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+
+{embed="_embeds/_footer"}

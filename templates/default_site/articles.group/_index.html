@@ -1,0 +1,45 @@
+{embed="_embeds/_header"}
+
+<div class="mod-wrapper">
+	<div class="mod" data-bg-style="white">
+		<div class="bd">
+			<ul class="list" data-padding="wide">
+				<li>
+					<ul class="tag-list">
+						<li>
+							<a
+							{if segment_2 == ""}
+								class="active"
+							{if:else}
+								href="/articles/"
+							{/if}
+							>All Posts</a>
+						</li>
+						{exp:channel:categories style="linear" category_group="1"}
+						<li>
+							<a
+							{if segment_3 == "{category_url_title}"}
+								class="active"
+							{if:else}
+								href="/articles/category/{category_url_title}"
+							{/if}
+							>{category_name}</a>
+						</li>
+						{/exp:channel:categories}
+					</ul>
+				</li>
+				{exp:channel:entries channel="articles"{if segment_3} category="{segment_3_category_id}"{/if}}
+				<li>
+					<div class="article-preview">
+						<a href="/articles/{url_title}/">{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }</a>
+						<h2 class="h2"><a href="/articles/{url_title}/">{title}</a></h2>
+						<h3>{article_subtitle}</h3>
+					</div>
+				</li>
+				{/exp:channel:entries}
+			</ul>
+		</div>
+	</div>
+</div>
+
+{embed="_embeds/_footer"}

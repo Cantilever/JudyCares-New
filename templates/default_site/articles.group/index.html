@@ -1,0 +1,17 @@
+{if segment_4}
+
+	{redirect="404"}
+
+{if:elseif segment_2 == "category"}
+
+	{embed="articles/_index" category="{segment_3}"}
+
+{if:elseif segment_2}
+
+	{embed="articles/_single" url_title="{segment_2}"}
+
+{if:else}
+
+	{embed="articles/_index"}
+
+{/if}

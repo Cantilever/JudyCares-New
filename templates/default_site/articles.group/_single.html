@@ -1,0 +1,30 @@
+{embed="_embeds/_header"}
+
+{exp:channel:entries url_title="{embed:url_title}" limit="1"}
+
+<div class="line">
+	<div class="headline-block">
+		{exp:ed_imageresizer image="{article_image}" maxWidth="800" forceWidth="yes" cropratio="16:9" }
+		<div class="text">
+			<div class="text-inner">
+				<h1 class="h1">{title}</h1>
+				<h2 class="h5">By Judy Fujimura, M.A.</h2>
+				{if categories}<h2>Topics: <a href="#">Anxiety and Depression</a>, <a href="#">Parent Coaching</a></h2>{/if}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="line">
+	<div class="mod-wrapper">
+		<div class="mod" data-padding="extra" data-bg-style="white">
+			<div class="bd">
+				{article_body}
+			</div>
+		</div>
+	</div>
+</div>
+
+{/exp:channel:entries}
+
+{embed="_embeds/_footer"}
