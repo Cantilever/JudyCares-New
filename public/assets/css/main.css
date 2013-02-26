@@ -131,7 +131,7 @@ footer .copy { width: 25%; float: left; text-align: right; color: rgb(0,68,34); 
 .headline-block .photo-credit { position: absolute; z-index: 2; bottom: 16px; right: 16px; font-size: 11px; width: 400px; text-align: right; color: #ccc; }
 .headline-block .photo-credit a { color: #ccc; }
 .headline-block .photo-credit a:hover { color: #eee; }
-.headline-block .text { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: table; }
+.headline-block .text { position: absolute; top: 0; left: 5%; right: 5%; height: 100%; width: 90%; display: table; }
 .headline-block .text .text-inner { display: table-cell; vertical-align: middle; text-align: center; z-index: 1; position: relative; animation: fadein 2s; -moz-animation: fadein 2s; -webkit-animation: fadein 1s; -o-animation: fadein 2s; }
 .headline-block .text .text-inner h1 { margin-bottom: 8px; }
 .headline-block[data-alignment="right"] .text { margin-left: 60%; margin-right: 5%; width: 35%; }
