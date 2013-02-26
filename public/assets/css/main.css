@@ -124,13 +124,16 @@ footer .copy { width: 25%; float: left; text-align: right; color: rgb(0,68,34); 
 .mod .bd > h3, .mod .bd > h4, .mod .bd > h5, .mod .bd > h6 { padding-top: 16px; }
 .mod[data-padding="extra"] { padding: 96px; }
 
-.headline-block { height: 450px; overflow: hidden; position: relative; }
+.headline-block { height: 450px; overflow: hidden; position: relative; text-shadow: 0 1px 1px rgba(0,0,0,1); color: white; }
+.headline-block a { text-decoration: underline; color: white; }
+.headline-block a:hover { color: rgba(255,255,255,.8); }
 .headline-block img { display: block; width: 100%; height: auto; }
+.headline-block .photo-credit { position: absolute; z-index: 2; bottom: 16px; right: 16px; font-size: 11px; width: 400px; text-align: right; color: #ccc; }
+.headline-block .photo-credit a { color: #ccc; }
+.headline-block .photo-credit a:hover { color: #eee; }
 .headline-block .text { position: absolute; top: 0; left: 0; height: 100%; width: 100%; display: table; }
-.headline-block .text .text-inner { display: table-cell; vertical-align: middle; text-align: center; z-index: 1; text-shadow: 0 1px 1px rgba(0,0,0,1); color: white; position: relative; animation: fadein 2s; -moz-animation: fadein 2s; -webkit-animation: fadein 1s; -o-animation: fadein 2s; }
+.headline-block .text .text-inner { display: table-cell; vertical-align: middle; text-align: center; z-index: 1; position: relative; animation: fadein 2s; -moz-animation: fadein 2s; -webkit-animation: fadein 1s; -o-animation: fadein 2s; }
 .headline-block .text .text-inner h1 { margin-bottom: 8px; }
-.headline-block .text .text-inner a { text-decoration: underline; color: white; }
-.headline-block .text .text-inner a:hover { color: rgba(255,255,255,.8); }
 .headline-block[data-alignment="right"] .text { margin-left: 60%; margin-right: 5%; width: 35%; }
 .headline-block[data-alignment="right"] .text-inner { text-align: left; }
 
