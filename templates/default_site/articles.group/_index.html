@@ -16,7 +16,7 @@
 							>All Posts</a>
 						</li>
 						{exp:channel:categories style="linear" category_group="1"}
-						<li>
+						<li{if count == total_results} class="last"{/if}>
 							<a
 							{if segment_3 == "{category_url_title}"}
 								class="active"
@@ -29,7 +29,7 @@
 					</ul>
 				</li>
 				{exp:channel:entries channel="articles"{if segment_3} category="{segment_3_category_id}"{/if}}
-				<li>
+				<li{if count == total_results} class="last"{/if}>
 					<div class="article-preview">
 						<a href="/articles/{url_title}/">{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }</a>
 						<h2 class="h2"><a href="/articles/{url_title}/">{title}</a></h2>
