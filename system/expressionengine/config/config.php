@@ -22,12 +22,12 @@ $config['allow_extensions'] = 'y';
 $config['site_label'] = 'JudyCares';
 $config['cookie_prefix'] = '';
 
-$config['sc_paypal_account'] = "";
+$config['sc_paypal_account'] = "store@judycares.com";
 $config['sc_encrypt_buttons'] = "n";
 $config['sc_certificate_id'] = "";
-$config['sc_public_certificate'] = "";
-$config['sc_private_key'] = "";
-$config['sc_paypal_certificate'] = "";
+$config['sc_public_certificate'] = "/Users/Fuji/Dropbox/Cantilever/Current Clients/JudyCares/New Site/system/codeigniter/encryption/public_certificate.pem";
+$config['sc_private_key'] = "/Users/Fuji/Dropbox/Cantilever/Current Clients/JudyCares/New Site/system/codeigniter/encryption/private_key.pem";
+$config['sc_paypal_certificate'] = "/Users/Fuji/Dropbox/Cantilever/Current Clients/JudyCares/New Site/system/codeigniter/encryption/paypal_certificate.pem";
 $config['sc_temp_path'] = "/tmp";
 
 

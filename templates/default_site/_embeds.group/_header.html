@@ -29,7 +29,7 @@
 	<script type="text/javascript" src="//use.typekit.net/myo5hwu.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	{if environment == "production" AND !logged_in}
+	{if environment == "production" AND member_id != 1}
 		<script type="text/javascript">
 
 			var _gaq = _gaq || [];
@@ -51,6 +51,20 @@
 
 	<div class="wrapper">
 
+		{if logged_in}
+			<section class="user-bar">
+				You are logged in as {screen_name}.
+				<nav class="user-menu">
+					<li>
+						<a href="#">My Purchases</a>
+					</li>
+					<li class="last">
+						<a href="{path='logout'}">Log Out</a>
+					</li>
+				</nav>
+			</section>
+		{/if}
+		
 		<header>
 			<a href="/" class="logo">Judy<em>Cares</em></a>
 			<nav class="main_menu">

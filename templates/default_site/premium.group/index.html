@@ -1,0 +1,16 @@
+{exp:channel:entries entry_id="10"}
+{exp:simple_commerce:purchase entry_id="{entry_id}" success="site/success" cancel="site/index"}
+       <h3>{item_name}</h3>
+
+       <p><strong>{item_regular_price}</strong></p>
+
+       {if item_type == "purchase"}
+               <p><a href="{buy_now_url}" onclick="window.open(this.href);return false;">Buy Now</a></p>
+               <p><a href="{add_to_cart_url}" onclick="window.open(this.href);return false;">Add to Cart</a></p>
+               <p><a href="{view_cart_url}" onclick="window.open(this.href);return false;">View Cart</a></p>
+       {/if}
+       {if item_type == "subscription"}
+               <p><a href="{subscribe_now_url}" onclick="window.open(this.href);return false;">Subscribe Now</a></p>
+       {/if}
+{/exp:simple_commerce:purchase}
+{/exp:channel:entries}
