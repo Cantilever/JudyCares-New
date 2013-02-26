@@ -15,7 +15,7 @@ $config['app_version'] = '255';
 $config['install_lock'] = "";
 $config['license_number'] = "7927-5989-7622-3478";
 $config['debug'] = '1';
-$config['cp_url'] = 'http://local.judycares.com:8888/heart.php';
+$config['cp_url'] = '/heart.php';
 $config['doc_url'] = "http://ellislab.com/expressionengine/user-guide/";
 $config['is_system_on'] = "y";
 $config['allow_extensions'] = 'y';
@@ -63,6 +63,8 @@ $config['prv_msg_upload_path']  = $images_path . "/pm_attachments/";
 /* ED Image Resizer */
 $config['ed_server_path']       = $base_path; // Server path to your site's web root
 $config['ed_cache_path']        = $base_path . "/images/uploads/_resized/"; // Server path to where your resized images should be stored
+
+
 
 // END EE config items
 

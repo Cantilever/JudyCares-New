@@ -17,8 +17,6 @@
 	
 	{if embed:meta_description}
 		<meta name="description" content="{embed:meta_description}">
-	{if:elseif embed:meta_description_slug}
-		<meta name="description" content="{embed='_includes/static_copy_for' url_title='{embed:meta_description_slug}' strip_html='yes'}">
 	{/if}
 
 	<!--[if lt IE 9]>
@@ -28,6 +26,22 @@
 
 	<script type="text/javascript" src="//use.typekit.net/myo5hwu.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	{if environment == "production" AND !logged_in}
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-19405239-2']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+	{/if}
 
 
 </head>

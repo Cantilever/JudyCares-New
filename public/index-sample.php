@@ -10,7 +10,7 @@
  * @since		Version 2.0
  */
 
-$assign_to_config['global_vars']['environment'] = 'dev';
+$assign_to_config['global_vars']['environment'] = 'REPLACE ME';
 
 /*
  * --------------------------------------------------------------------
