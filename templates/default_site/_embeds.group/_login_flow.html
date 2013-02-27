@@ -1,0 +1,86 @@
+<?php
+	$login_stage = isset($_GET['login_stage']) ? $_GET['login_stage'] : "email";
+
+	if($login_stage == "email") :
+?>
+
+	<form method="GET">
+        <dl class="info">
+            <dt class="h6">My Email Address is...</dt>
+            <dd><input type="text" name="email" value=""></dd>
+            <dt class="h6"><label>My password</label></dt>
+            <dd>
+            	<input type="radio" name="registered" id="false" value="false" checked>
+				<label for="no">I don't have a password yet, I want to register</label><br/>
+				<input type="radio" name="registered" id="true" value="true">
+				<label for="yes">I have a password, I want to sign in</label>
+        		</dd>
+            <dt></dt>
+            <dd>
+            	<input type="hidden" name="login_stage" value="password">
+            	<input class="button" type="submit" name="submit" value="Sign in"><br/>
+            </dd>
+        </dl>
+	</form>
+
+<?php elseif($login_stage == "password") : ?>
+
+	<!-- User has entered their email and told us if they have an account -->
+
+	<?php
+		$email = isset($_GET['email']) ? $_GET['email'] : false;
+		$registered = isset($_GET['registered']) ? $_GET['registered'] : false;
+
+		if ($registered == "true") :
+	?>
+		
+		<!-- User has an account. Show password field and log them in. -->
+				
+		{exp:member:login_form return="{embed:success_url}"}
+
+			<dl class="info">
+		        <dt class="h6">My Password</dt>
+		        <dd>
+		        	<input id="password" type="password" name="password" value=""/><br/>
+		        </dd>
+		        <dt></dt>
+		        <dd>
+					<input type="hidden" name="username" value="<?php echo $email; ?>" />
+		        	<input class="button" type="submit" name="submit" value="Sign in"><br/><br/>
+		        	<a href="?login_stage=password&registered=false&username=<?php echo $email; ?>">Wait! I don't have a password</a><br/>
+		        	<a href="{path='member/forgot_password'}">I forgot my password</a>
+		        </dd>
+		    </dl>
+
+		{/exp:member:login_form}
+
+	<?php else : ?>
+
+		<!-- User doesn't have an account. Show register field and log them in after register. -->
+
+		<?php $action_id = $this->EE->functions->fetch_action_id('Member', 'register_member'); ?>
+
+		<form method="post" action="/"  >
+			<input type="hidden" name="XID" value="{XID_HASH}" />
+			<input type="hidden" name="ACT" value="<?php echo $action_id; ?>" />
+			<input type="hidden" name="RET" value="{embed:success_url}" />
+			<input type="hidden" name="FROM" value="" />
+			<input type="hidden" name="username" value="<?php echo $email; ?>" />
+			<input type="hidden" name="email" value="<?php echo $email; ?>" />
+
+			<dl class="info">
+                <dt class="h6">Choose a Password</dt>
+                <dd><input id="password" type="password" name="password" value="" maxlength="32" class="input" size="25" /></dd>
+                <dt class="h6">Confirm Password</dt>
+                <dd><input id="confirm" type="password" name="password_confirm" value="" maxlength="32" class="input" size="25" /></dd>
+                <dt></dt>
+                <dd>
+                	<input class="button" type="submit" name="submit" value="Sign in"><br/>
+                	<a href="?login_stage=password&registered=true&username=<?php echo $email; ?>">Wait! I already have a password</a>
+               	</dd>
+            </dl>
+		</form> 
+	
+	<?php endif; ?>
+
+<?php endif; ?>
