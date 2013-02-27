@@ -38,8 +38,16 @@
 							
 							{if logged_in}
 							
+								<?php $fresh_login = isset($_GET['login_stage']) ? $_GET['login_stage'] : false; ?>
+
 								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
-									<a class="button button-primary" href="{buy_now_url}">Purchase for ${item_regular_price}</a>
+									<a class="button button-primary" href="{buy_now_url}">
+										<?php if ($fresh_login) : ?>
+											Continue to Paypal
+										<?php else : ?>
+											Purchase for ${item_regular_price}
+										<?php endif; ?>
+									</a>
 								{/exp:simple_commerce:purchase}
 							
 							{if:else}
@@ -50,9 +58,7 @@
 									if($login_stage) :
 								?>
 
-								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
-									{embed="_embeds/_login_flow" success_url="{buy_now_url}"}
-								{/exp:simple_commerce:purchase}
+									{embed="_embeds/_login_flow" success_url="/articles/{url_title}/?fresh_login=true"}
 
 								<?php else : ?>
 
