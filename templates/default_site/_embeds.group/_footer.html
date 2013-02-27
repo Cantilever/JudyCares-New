@@ -1,6 +1,18 @@
 	</section>
 
+	{if logged_in}
+	{if:else}
+		<section class="user-bar">
+			<nav class="user-menu">
+				<li class="last">
+					<a href="/site/login">Log in</a>
+				</li>
+			</nav>
+		</section>
+	{/if}
+
 	<footer>
+
 		<nav class="footer-menu">
 			<li>
 				<a href="/">

@@ -31,8 +31,21 @@
 				{exp:channel:entries channel="articles"{if segment_3} category="{segment_3_category_id}"{/if}}
 				<li{if count == total_results} class="last"{/if}>
 					<div class="article-preview">
-						<a href="/articles/{url_title}/">{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }</a>
-						<h2 class="h2"><a href="/articles/{url_title}/">{title}</a></h2>
+						<a href="/articles/{url_title}/">
+							{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }<br/>
+							<h2 class="h2">
+								{title}
+								{if article_is_premium OR article_is_video}
+									<br/>
+									{if article_is_premium}
+										<span class="flag">Premium</span>
+									{/if}
+									{if article_is_video}
+										<span class="flag">Video</span>
+									{/if}
+								{/if}
+							</h2>
+						</a>
 						<h3>{article_subtitle}</h3>
 					</div>
 				</li>

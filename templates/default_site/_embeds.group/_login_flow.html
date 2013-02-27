@@ -18,7 +18,7 @@
             <dt></dt>
             <dd>
             	<input type="hidden" name="login_stage" value="password">
-            	<input class="button" type="submit" name="submit" value="Sign in"><br/>
+            	<input class="button" type="submit" name="submit" value="Continue"><br/>
             </dd>
         </dl>
 	</form>
@@ -35,7 +35,7 @@
 	?>
 		
 		<!-- User has an account. Show password field and log them in. -->
-				
+
 		{exp:member:login_form return="{embed:success_url}"}
 
 			<dl class="info">
@@ -47,7 +47,7 @@
 		        <dd>
 					<input type="hidden" name="username" value="<?php echo $email; ?>" />
 		        	<input class="button" type="submit" name="submit" value="Sign in"><br/><br/>
-		        	<a href="?login_stage=password&registered=false&username=<?php echo $email; ?>">Wait! I don't have a password</a><br/>
+		        	<a href="?login_stage=password&registered=false&email=<?php echo urlencode($email); ?>">Wait! I don't have a password</a><br/>
 		        	<a href="{path='member/forgot_password'}">I forgot my password</a>
 		        </dd>
 		    </dl>

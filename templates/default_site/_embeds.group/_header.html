@@ -28,7 +28,8 @@
 
 	<script type="text/javascript" src="//use.typekit.net/myo5hwu.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+	<script type="text/javascript" src="//cdn.sublimevideo.net/js/qdlqnxmz.js"></script>
+	
 	{if environment == "production" AND member_id != 1}
 		<script type="text/javascript">
 
@@ -51,18 +52,16 @@
 
 	<div class="wrapper">
 
-		<section class="user-bar">
-			{if logged_in}
+		{if logged_in}
+			<section class="user-bar">
 				You are logged in as {screen_name}.
 				<nav class="user-menu">
 					<li class="last">
 						<a href="{path='logout'}">Log Out</a>
 					</li>
 				</nav>
-			{if:else}
-				<a href="/site/login">Log in</a>
-			{/if}
-		</section>
+			</section>
+		{/if}
 		
 		<header>
 			<a href="/" class="logo">Judy<em>Cares</em></a>

@@ -96,7 +96,7 @@ input[type="text"], input[type="password"] { background: rgb(220,237,223); displ
  * Navigation
  */
 
-.user-bar { color: white; padding: 8px 16px; background: rgb(71, 190, 142); }
+.user-bar { overflow: hidden; color: white; padding: 8px 16px; background: rgb(71, 190, 142); }
 .user-bar a { color: white; text-decoration: underline; }
 .user-bar a:hover { color: rgb(204,216,210); }
 .user-bar .user-menu { float: right; }
@@ -164,12 +164,14 @@ ul.tag-list > li a:hover { background: rgb(163, 241, 202); }
 ul.tag-list > li a.active { background: rgb(0,135,68); color: white; }
 
 .callout { padding: 32px 25%; }
+.meta-bar { border-top: 1px dashed rgb(200, 233, 200); border-bottom: 1px dashed rgb(200, 233, 200); padding: 16px 0; text-align: center; font-size: 24px; line-height: 32px; margin-bottom: 32px; }
 
 dl.info { text-align: center; }
 dl.info dt { margin-bottom: 8px; }
 dl.info dd { margin-bottom: 32px; }
 dl.info dd.last { margin-bottom: 0; }
 
-
+.flag { border-radius: 5px; background: rgb(0,135,68); color: white; font-size: 15px; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; padding: 2px 8px; }
+a:hover .flag { background: rgb(55, 175, 116); }
 
 

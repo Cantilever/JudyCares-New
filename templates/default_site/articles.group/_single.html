@@ -1,87 +1,129 @@
 {exp:channel:entries url_title="{embed:url_title}" limit="1"}
 
+{exp:scm_access entry_id="{entry_id}"}
+
 {embed="_embeds/_header" html_title="{title}" meta_description="{article_subtitle}"}
 
+<?php $login_stage = isset($_GET['login_stage']) ? $_GET['login_stage'] : false; ?>
+
 <div class="line">
-	<div class="headline-block">
-		{if article_photo_credit_link}
-		<div class="photo-credit">
-			Photo Credit: <a href="{article_photo_credit_link}">{article_photo_credit_text}</a>
-		</div>
-		{/if}
-		{exp:ed_imageresizer image="{article_image}" maxWidth="800" forceWidth="yes" cropratio="16:9" }
-		<div class="text">
-			<div class="text-inner">
-				<h1 class="h1">{title}</h1>
-				<h2 class="h5">By Judy Fujimura, M.A.</h2>
-				{if category_count != 0}
-				<h2>Topics: 
-					{categories backspace="1"}<a href="#">{category_name}</a>,{/categories}
-				</h2>
-				{/if}
+
+	<?php if (!$login_stage) : ?>
+
+		<div class="headline-block">
+			{if article_photo_credit_link}
+			<div class="photo-credit">
+				Photo Credit: <a href="{article_photo_credit_link}">{article_photo_credit_text}</a>
+			</div>
+			{/if}
+			{exp:ed_imageresizer image="{article_image}" maxWidth="800" forceWidth="yes" cropratio="16:9" }
+			<div class="text">
+				<div class="text-inner">
+					<h1 class="h1">{title}</h1>
+					<h2 class="h5">By Judy Fujimura, M.A.</h2>
+					{if category_count != 0}
+					<h2>Topics: 
+						{categories backspace="1"}<a href="#">{category_name}</a>,{/categories}
+					</h2>
+					{/if}
+				</div>
 			</div>
 		</div>
-	</div>
+
+	<?php endif; ?>
+
 </div>
 
 <div class="line">
 	<div class="mod-wrapper">
 		<div class="mod" data-padding="extra" data-bg-style="white">
-			<div class="bd">
 
-				{exp:scm_access entry_id="{entry_id}"}
-					{if article_is_premium == "Yes"}
+				{if article_is_premium == "Yes"}
+			
+					<!-- Premium Article -->
 
-						{if no_access}
+					{if no_access}
+	
+						<!-- User doesn't have access to this, or isn't logged in -->
 
-							{premium_article_blurb}...
-							
-							{if logged_in}
-							
-								<?php $fresh_login = isset($_GET['login_stage']) ? $_GET['login_stage'] : false; ?>
+						<?php if ($login_stage) : ?>
 
-								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
-									<a class="button button-primary" href="{buy_now_url}">
-										<?php if ($fresh_login) : ?>
-											Continue to Paypal
-										<?php else : ?>
-											Purchase for ${item_regular_price}
-										<?php endif; ?>
-									</a>
-								{/exp:simple_commerce:purchase}
-							
-							{if:else}
-										
-								<?php
-									$login_stage = isset($_GET['login_stage']) ? $_GET['login_stage'] : false;
+							<!-- User has either started to log in or has just finished logging in -->
 
-									if($login_stage) :
-								?>
+							<div class="hd">
+								<div class="meta-bar">
+									<h3 class="h3">Purchasing: {title}</h3>
+								</div>
+							</div>
+							<div class="bd">
 
-									{embed="_embeds/_login_flow" success_url="/articles/{url_title}/?fresh_login=true"}
+								<?php if ($login_stage == "completed") : ?>
+
+									<!-- User just finished logging in. Show them the "Continue to Paypal" button -->
+
+									{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
+										<a class="button button-primary" href="{buy_now_url}">Continue to Paypal</a>
+									{/exp:simple_commerce:purchase}
 
 								<?php else : ?>
 
-									{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
-										<a class="button button-primary" href="?login_stage=email">Purchase for ${item_regular_price}</a>
-									{/exp:simple_commerce:purchase}
+									<!-- User is logging in. Show them the login form sequence -->
+
+									{embed="_embeds/_login_flow" success_url="/articles/{url_title}/?login_stage=completed"}
 
 								<?php endif; ?>
-							{/if}
-						{if:else}
-							<div>
-								Thank you for purchasing this premium content.
+
 							</div>
-							{article_body}			
-						{/if}
+
+						<?php else : ?>
+						
+							<!-- User isn't logging in, so show them a purchase button which is either real or will take them to login -->
+
+							<div class="hd">
+								<div class="meta-bar">
+									This article is JudyCares <span>Premium Content.</span> Premium content is deeper, more focused content which provides special insight into family, relationships, and more.
+								</div>
+							</div>
+							<div class="bd">
+								
+								<p>{premium_article_blurb}...</p>
+
+								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
+									<a class="button button-primary" href="{if logged_in}{buy_now_url}{if:else}?login_stage=email{/if}">Purchase for ${item_regular_price}</a>
+								{/exp:simple_commerce:purchase}
+
+							</div>
+
+						<?php endif; ?>
+					
 					{if:else}
-						{article_body}			
+
+						<!-- User purchased this -->
+
+						<div class="hd">
+							<div class="meta-bar">
+								Thank you for purchasing this JudyCares Premium Content!
+							</div>
+						</div>
+						<div class="bd">
+							{article_body}
+						</div>
+
 					{/if}
-				{/exp:scm_access}
-			</div>
+
+				{if:else}
+
+					<div class="bd">
+						{article_body}
+					</div>	
+				
+				{/if}
+
 		</div>
 	</div>
 </div>
+
+{/exp:scm_access}
 
 {/exp:channel:entries}
 
