@@ -87,7 +87,10 @@ em { font-style: italic; }
 
 header, footer, ul.tag-list, .headline-block { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
 
-
+input[type="text"], input[type="password"] { background: rgb(220,237,223); display: inline-block; border: 1px solid rgb(135, 216, 183); outline: none; padding: 8px; font-family: "ff-tisa-web-pro"; font-size: 14px; }
+.button { display: inline-block; font-family: "brandon-grotesque"; font-weight: 700; font-size: 24px; cursor: pointer; padding: 4px 8px; border: none; background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1)) rgb(0,135,68); color: white; text-align: center; border-radius: 4px; }
+.button:hover { background: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1)) rgb(0, 116, 58); color: white; }
+.button.button-primary { width: 400px; display: block; margin: 32px auto 0; padding: 16px 32px; font-size: 32px; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
 
 /*
  * Navigation

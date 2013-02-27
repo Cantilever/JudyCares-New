@@ -727,7 +727,7 @@ class Member_register extends Member {
 			'title' 	=> lang('mbr_registration_complete'),
 			'heading'	=> lang('thank_you'),
 			'content'	=> lang('mbr_registration_completed')."\n\n".$message,
-			'redirect'	=> '',
+			'redirect'	=> $this->EE->db->escape_str($_POST['RET']), // TF EDIT 2/27/13
 			'link'		=> array($return, $site_name)
 		);
 

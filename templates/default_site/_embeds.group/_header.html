@@ -51,19 +51,18 @@
 
 	<div class="wrapper">
 
-		{if logged_in}
-			<section class="user-bar">
+		<section class="user-bar">
+			{if logged_in}
 				You are logged in as {screen_name}.
 				<nav class="user-menu">
-					<li>
-						<a href="#">My Purchases</a>
-					</li>
 					<li class="last">
 						<a href="{path='logout'}">Log Out</a>
 					</li>
 				</nav>
-			</section>
-		{/if}
+			{if:else}
+				<a href="/site/login">Log in</a>
+			{/if}
+		</section>
 		
 		<header>
 			<a href="/" class="logo">Judy<em>Cares</em></a>

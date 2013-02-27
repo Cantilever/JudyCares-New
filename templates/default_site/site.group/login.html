@@ -1,0 +1,32 @@
+{embed="_embeds/_header" html_title="Login"}
+
+<?php
+$return = isset($_GET['return_url']) ? $_GET['return_url'] : false;
+?>
+
+<div class="mod-wrapper">
+	<div class="mod">
+		<div class="hd">
+			<h3 class="h4">Log In</h3>
+		</div>
+		<div class="bd">
+			{exp:member:login_form return="<?php if ($return) { echo $return; } else { echo "site/index"; } ?>"}
+		        <p>
+		                <label>Username</label><br>
+		                <input type="text" name="username" value="" maxlength="32" size="25">
+		        </p>
+		        <p>
+		                <label>Password</label><br>
+		                <input type="password" name="password" value="" maxlength="32" size="25">
+		        </p>
+		        {if auto_login}
+		                <p><input type="checkbox" name="auto_login" value="1"> Auto-login on future visits</p>
+		        {/if}
+		        <p><input type="submit" name="submit" value="Submit"></p>
+		        <p><a href="/site/forgot-password">Forgot your password?</a></p>
+			{/exp:member:login_form}
+		</div>
+	</div>
+</div>
+
+{embed="_embeds/_footer" html_title="Login"}

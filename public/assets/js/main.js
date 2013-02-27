@@ -6,6 +6,12 @@ $(function() {
 			blurb: $(this).data('blurb')
 		});
 	});
+
+	$('.hybrid-form').each(function() {
+		var obj = new HybridForm({
+			$el: $(this)
+		});
+	})
 });
 
 Map = function(options) {
@@ -54,4 +60,8 @@ Map.prototype = {
 
    		map.infoWindow.open(map.gmap, map.marker);
 	}
+}
+
+HybridForm = function(options) {
+	this.$el = options.$el;
 }
