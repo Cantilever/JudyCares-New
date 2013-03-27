@@ -125,7 +125,7 @@ footer .copy { width: 25%; float: left; text-align: right; color: rgb(0,68,34); 
  * Objects
  */
 
-.mod-wrapper, .mod { padding: 16px; }
+.mod-wrapper, .mod { padding: 24px; }
 .mod .hd { margin-bottom: 16px; }
 .mod .bd { font-family: "ff-tisa-web-pro"; }
 .mod .bd > * { margin-bottom: 12px; }
@@ -157,8 +157,9 @@ ul.list > li.last { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
 .article-preview img { margin-bottom: 24px; }
 .article-preview h2 { margin-bottom: 20px; }
 
-ul.tag-list { text-align: center; font-size: 13px; }
-ul.tag-list > li { margin: 0 4px 4px 0; display: inline; }
+ul.tag-list { text-align: center; font-size: 13px; margin-bottom: -8px; }
+ul.tag-list > li { margin-bottom: 8px; display: inline-block; }
+ul.tag-list > li + li { margin-left: 4px; }
 ul.tag-list > li a { background: rgb(204, 247, 225); border-radius: 100px; display: inline-block; padding: 1px 12px 3px; }
 ul.tag-list > li a:hover { background: rgb(163, 241, 202); }
 ul.tag-list > li a.active { background: rgb(0,135,68); color: white; }
