@@ -86,7 +86,7 @@
 							</div>
 							<div class="bd">
 								
-								<p>{premium_article_blurb}...</p>
+								{premium_article_blurb}
 
 								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
 									<a class="button button-primary" href="{if logged_in}{buy_now_url}{if:else}?login_stage=email{/if}">Purchase for ${item_regular_price}</a>
