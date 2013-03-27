@@ -100,8 +100,8 @@ input[type="text"], input[type="password"] { background: rgb(220,237,223); displ
 .user-bar a { color: white; text-decoration: underline; }
 .user-bar a:hover { color: rgb(204,216,210); }
 .user-bar .user-menu { float: right; }
-.user-bar .user-menu li { float: left; margin-right: 16px; }
-.user-bar .user-menu li.last { margin-right: 0; }
+.user-bar .user-menu li { float: left; }
+.user-bar .user-menu li + li { margin-left: 16px; }
 
 header { font-weight: 100; position: relative; background: rgb(0,135,68); }
 header a.logo { position: absolute; width: 25%; left: 0; top: 0; text-align: center; height: 100%; display: block; font-family: "brandon-grotesque"; font-size: 32px; font-weight: 500; line-height: 94px; color: white; }
@@ -164,6 +164,7 @@ ul.tag-list > li a { background: rgb(204, 247, 225); border-radius: 100px; displ
 ul.tag-list > li a:hover { background: rgb(163, 241, 202); }
 ul.tag-list > li a.active { background: rgb(0,135,68); color: white; }
 
+.aux { color: #888; text-align: center; }
 .callout { padding: 32px 25%; }
 .meta-bar { border-top: 1px dashed rgb(200, 233, 200); border-bottom: 1px dashed rgb(200, 233, 200); padding: 16px 0; text-align: center; font-size: 24px; line-height: 32px; margin-bottom: 32px; }
 
