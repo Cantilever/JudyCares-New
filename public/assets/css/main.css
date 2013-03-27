@@ -153,6 +153,8 @@ ul.list > li { padding-bottom: 15px; margin-bottom: 16px; border-bottom: 1px das
 ul.list[data-padding="wide"] > li { padding-bottom: 31px; margin-bottom: 32px; }
 ul.list > li.last { padding-bottom: 0; margin-bottom: 0; border-bottom: none; }
 
+ul.bulleted { list-style-type: square; margin-left: 30px; }
+
 .article-preview { text-align: center; margin: 0 25%; }
 .article-preview img { margin-bottom: 24px; }
 .article-preview h2 { margin-bottom: 20px; }
