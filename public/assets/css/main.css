@@ -82,7 +82,7 @@ em { font-style: italic; }
 .h4 { font-weight: 700; font-size: 14px; line-height: 14px; text-transform: uppercase; letter-spacing: .2em; color: #444; }
 .h5 { font-size: 16px; line-height: 22px; font-style: italic; }
 .h6 { font-weight: 700; font-size: 16px; line-height: 22px; font-style: italic; color: #888; }
-.h6:before { content: "— "; }
+.h6:before { content: "— "; color: #ccc; }
 .h6:after { content: " —"; color: #ccc; }
 
 header, footer, ul.tag-list, .headline-block { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
