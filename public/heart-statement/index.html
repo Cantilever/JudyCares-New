@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Heart Statement | JudyCares</title>
+	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="http://jquerymobile.com/test/experiments/themeswitcher/jquery.mobile.themeswitcher.js"></script>
+	<script src="http://jquerymobile.com/test/docs/_assets/js/jqm-docs.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0b1/jquery.mobile-1.0b1.min.js"></script>
+	
+	<style>
+		.jqm-themeswitcher { display: none; }
+
+		.response #start-over { display: block; width: 60%; margin: 0 20%; }
+		.portrait .response h1 { font-size: 2em; margin-top: 3em; text-align: center; }
+		.landscape .response h1 { font-size: 3em; margin-top: .5em; text-align: center; }
+		.min-width-768px.portrait .response h1 { margin-top: 2em; font-size: 6em; }
+		.min-width-768px.landscape .response h1 { margin-top: 1.5em; font-size: 7em; }
+	</style>
+	
+	<script>
+		var feelings = {
+			"happy": [
+				"alive",
+				"amused",
+				"anxious",
+				"calm",
+				"cheerful",
+				"content",
+				"delighted",
+				"ecstatic",
+				"excited",
+				"fantastic",
+				"fine",
+				"fortunate",
+				"friendly",
+				"glad",
+				"good",
+				"great",
+				"hopeful",
+				"loving",
+				"motherly",
+				"optimistic",
+				"peaceful",
+				"pleased",
+				"proud",
+				"relaxed",
+				"relieved",
+				"satisfied",
+				"thankful",
+				"thrilled",
+				"turned on",
+				"up",
+				"warm"
+			],
+			"sad": [
+				"apathetic",
+				"awful",
+				"bad",
+				"blue",
+				"crushed",
+				"depressed",
+				"disappointed",
+				"dissatisfied",
+				"disturbed",
+				"down",
+				"embarrased",
+				"gloomy",
+				"glum",
+				"hate",
+				"hopeless",
+				"hurt",
+				"lonely",
+				"lost",
+				"low",
+				"miserable",
+				"painful",
+				"sorry",
+				"terrible",
+				"turned off",
+				"uneasy",
+				"unhappy",
+				"unloved",
+				"upset"
+			],
+			"angry": [
+				"aggravated",
+				"annoyed",
+				"burned up",
+				"critical",
+				"disgusted",
+				"enraged",
+				"envious",
+				"fed up",
+				"frustrated",
+				"furious",
+				"impatient",
+				"irritated",
+				"mad",
+				"mean",
+				"outraged",
+				"rage",
+				"resentful",
+				"sore"
+			],
+			"confused" : [
+				"anxious",
+				"awkward",
+				"baffled",
+				"bothered",
+				"crazy",
+				"dazed",
+				"depressed",
+				"disorganized",
+				"disoriented",
+				"distracted",
+				"disturbed",
+				"embarrassed",
+				"frustrated",
+				"helpless",
+				"hopeless",
+				"lost",
+				"mixed up",
+				"panicky",
+				"perilized",
+				"puzzled",
+				"stuck",
+				"surprised",
+				"trapped",
+				"troubled",
+				"uncertain",
+				"uncomfortable",
+				"unsure",
+				"upset",
+				"weak"
+			],
+			"scared" : [
+				"afraid",
+				"anxious",
+				"awed",
+				"chicken",
+				"confused",
+				"fearful",
+				"frightened",
+				"horrified",
+				"insecure",
+				"intimidated",
+				"jumpy",
+				"lonely",
+				"nervious",
+				"panicky",
+				"panicked",
+				"shaky",
+				"shy",
+				"stunned",
+				"tense",
+				"terrified",
+				"threatened",
+				"timid",
+				"uneasy",
+				"unsure",
+				"worried",
+			],
+			"weak" : [
+				"ashamed",
+				"bored",
+				"confused",
+				"defenseless",
+				"discouraged",
+				"embarrassed",
+				"exhauseted",
+				"fragile",
+				"frail",
+				"frustrated",
+				"guilty",
+				"helpless",
+				"horrible",
+				"ill",
+				"impotent",
+				"inadequate",
+				"insecure",
+				"lifeless",
+				"lost",
+				"overwhelmed",
+				"powerless",
+				"quiet",
+				"run-down",
+				"shaky",
+				"shy",
+				"sick",
+				"timid",
+				"tired",
+				"unsure",
+				"useless",
+				"vulnerable",
+			],
+			"strong" : [
+				"active",
+				"aggressive",
+				"alert",
+				"angry",
+				"bold",
+				"brave",
+				"capable",
+				"confident",
+				"determined",
+				"energetic",
+				"happy",
+				"hate",
+				"healthy",
+				"intense",
+				"loud",
+				"love",
+				"mean",
+				"open",
+				"positive",
+				"potent",
+				"powerful",
+				"quick",
+				"rage",
+				"secure",
+				"solid",
+				"super",
+				"tough"
+			]
+		}
+		
+		$(function() {
+			for (var category in feelings) {
+				category_upcased = category.charAt(0).toUpperCase() + category.slice(1)
+				$('#home ul').append('<li><a href="#' + category_upcased + '">' + category_upcased + '</a></li>');
+				$('body').append('<div data-role="page" id="' + category_upcased + '"><div data-role="header" data-theme="c"><h1>' + category_upcased + ' Feelings</h1><a href="#home" data-icon="arrow-l" data-role="button" data-theme="c">Home</a></div><div data-role="content"><nav><ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"></ul></nav></div></div>');
+				for(var i = 0; i<feelings[category].length; i++) {
+					feeling_upcased = feelings[category][i].charAt(0).toUpperCase() + feelings[category][i].slice(1);
+					$('#' + category_upcased + ' ul').append('<li><a class="final" href="#final-' + feeling_upcased + '">' + feeling_upcased + '</a></li>');
+					$('body').append('<div data-role="page" class="response" id="final-' + feeling_upcased + '"><div data-role="content"><h1 id="header">I feel<br/>' + feeling_upcased + '</h1><a href="#home" id="start-over" data-icon="arrow-l" data-role="button" data-theme="c">Start Again</a></div></div>');
+				}
+			}
+		});
+		
+	</script>
+</head>
+<body>
+	
+	<div data-role="page" id="home">
+		<div data-role="content">
+
+			<h1>I feel...</h1>
+			
+			<nav>
+				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"></ul>
+			</nav>
+
+		</div>
+	</div><!-- End Home -->
+	
+</body>
+</html>
