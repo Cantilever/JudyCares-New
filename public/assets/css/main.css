@@ -43,7 +43,7 @@ table { border-collapse: collapse; border-spacing: 0; }
  * Global Styles
  */
 
-html { height: 100%; background: rgb(220,237,223); background: fixed -webkit-linear-gradient(top, rgba(160, 193, 160,.2), rgba(160, 193, 160,.4)); }
+html { height: 100%; background: rgb(220,237,223); background: fixed -webkit-linear-gradient(top, rgba(160, 193, 160,.2), rgba(160, 193, 160,.4)); min-width: 320px; }
 body { font-family: "brandon-grotesque", sans-serif; padding: 12px; font-size: 14px; line-height: 23px; color: #222; }
 .wrapper { background: rgb(254,254,254); }
 
