@@ -83,10 +83,10 @@ input[type="text"], input[type="password"] { background: rgb(220,237,223); displ
 header { font-weight: 100; position: relative; background: rgb(30,148,89); overflow: hidden; }
 header a.logo { float: left; width: 33.33%; background: rgb(0,135,68); text-align: center; display: block; font-family: "brandon-grotesque"; font-size: 20px; font-weight: 500; line-height: 48px; color: white; -webkit-transition: font-size .2s;}
 header a.logo em { font-style: normal; color: rgb(189,231,214); }
-header nav.main_menu li { float: left; width: 33.33%; }
-header nav.main_menu li a { -webkit-transition: background .2s; display: block; height: 48px; line-height: 48px; text-align: center; font-size: 12px; color: white; text-transform: uppercase; letter-spacing: .2em; }
-header nav.main_menu li a:hover { background: rgb(70,166,118); }
-header nav.main_menu li a.active { background: rgb(56,160,108); }
+header nav.main-menu li { float: left; width: 33.33%; }
+header nav.main-menu li a { -webkit-transition: background .2s; display: block; height: 48px; line-height: 48px; text-align: center; font-size: 12px; color: white; text-transform: uppercase; letter-spacing: .2em; }
+header nav.main-menu li a:hover { background: rgb(70,166,118); }
+header nav.main-menu li a.active { background: rgb(56,160,108); }
 
 footer { padding: 24px 24px 20px 24px; font-size: 12px; overflow: hidden; background: rgb(0,135,68); text-align: center; }
 
@@ -157,19 +157,13 @@ a:hover .flag { background: rgb(55, 175, 116); }
 
 
 
-@media only screen and (min-width: 481px) {
-	
-
-
-} /* end of media query */
-
-
+/*
+ * Responsive Styles
+ */
 
 @media only screen and (min-width: 600px) {
 	
-	/*
-	 * Grid & Clearfix
-	 */
+	/* Grid */
 
 	.line { overflow: hidden; }
 	.unit { float: left; }
@@ -190,39 +184,60 @@ a:hover .flag { background: rgb(55, 175, 116); }
 	.unit.size5of8 { width: 62.5%; }
 	.unit.size7of8 { width: 87.5%; }
 
-	.h1 { font-size: 64px; line-height: 64px; }
-	
+
+	/* Global Styles */
+
 	body { padding: 24px; font-size: 15px; line-height: 25px; }
+
+	.h1 { font-size: 48px; line-height: 48px; }
 	
-	.mod-wrapper, .mod { padding: 18px; }
 
-	.button.button-primary { font-size: 32px; max-width: 400px; }
-
-	.mod[data-padding="extra"] { padding: 48px; }
+	/* Navigation */
 
 	header a.logo { position: absolute; width: 25%; left: 0; top: 0; height: 100%; line-height: 96px; font-size: 24px; }
-	header nav.main_menu { margin-left: 25%; width: 75%; }
-	header nav.main_menu li { width: 20%; }
-	header nav.main_menu li a { height: 96px; line-height: 96px; }
+	header nav.main-menu { margin-left: 25%; width: 75%; }
+	header nav.main-menu li { width: 20%; }
+	header nav.main-menu li a { height: 96px; line-height: 96px; }
 	
 	footer nav.footer-menu li { float: left; margin-right: 24px; }
 	footer .copy { text-align: left; }
 
+
+	/* Objects */
+
+	.mod-wrapper, .mod { padding: 18px; }
+	.mod[data-padding="extra"] { padding: 48px; }
+	
+	.button.button-primary { font-size: 32px; max-width: 400px; }
+
 	.headline-block .photo-credit { bottom: 16px; right: 16px; }
+
 	.callout { padding-left: 25%; padding-right: 25%; }
+
 	.meta-bar { font-size: 24px; line-height: 32px;}
-} /* end of media query */
+
+}
 
 @media only screen and (min-width: 880px) {
 
-	.mod-wrapper, .mod { padding: 24px; }
+	/* Global Styles */
+
+	.h1 { font-size: 64px; line-height: 64px; }
+
+	.wrapper { width: 880px; margin: 0 auto; }
+
+
+	/* Navigation */
 
 	header a.logo { font-size: 32px; }
-	.wrapper { width: 880px; margin: 0 auto; }
-	.mod[data-padding="extra"] { padding: 96px; }
-	header nav.main_menu li a { font-size: 12px; }
+	header nav.main-menu li a { font-size: 12px; }
 
 	footer nav.footer-menu { width: 75%; float: left; margin-bottom: 0; }
 	footer .copy { width: 25%; float: left; text-align: right; }
+
+	/* Objects */
+
+	.mod-wrapper, .mod { padding: 24px; }
+	.mod[data-padding="extra"] { padding: 96px; }
 
 }
