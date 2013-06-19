@@ -213,12 +213,12 @@ a:hover .flag { background: rgb(55, 175, 116); }
 	.meta-bar { font-size: 24px; line-height: 32px;}
 } /* end of media query */
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 880px) {
 
 	.mod-wrapper, .mod { padding: 24px; }
 
 	header a.logo { font-size: 32px; }
-	.wrapper { width: 800px; margin: 0 auto; }
+	.wrapper { width: 880px; margin: 0 auto; }
 	.mod[data-padding="extra"] { padding: 96px; }
 	header nav.main_menu li a { font-size: 12px; }
 
