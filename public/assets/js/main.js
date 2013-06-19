@@ -11,7 +11,9 @@ $(function() {
 		var obj = new HybridForm({
 			$el: $(this)
 		});
-	})
+	});
+
+	$('section.main').fitVids();
 });
 
 Map = function(options) {
@@ -20,7 +22,8 @@ Map = function(options) {
 	this.$el = options.$el;
 	this.address = options.address;
 	this.blurb = options.blurb;
-	this.title = "foo";
+	this.infoWindowOpen = false;
+
 	this.mapOptions = _.extend({
 		zoom: 12,
 	    mapTypeControl: false,
@@ -58,7 +61,20 @@ Map.prototype = {
 			content: this.blurb
 		});
 
-   		map.infoWindow.open(map.gmap, map.marker);
+		this.size();
+   		$(window).on('resize', function() {
+   			map.size();
+   		});
+	},
+	size: function() {
+		this.gmap.setCenter(this.mapOptions.center);
+		if ($(window).width() < 800 && this.infoWindowOpen) {
+			this.infoWindow.close();
+			this.infoWindowOpen = false;
+		} else if ($(window).width() >= 800 && !this.infoWindowOpen) {
+			this.infoWindow.open(this.gmap, this.marker);
+			this.infoWindowOpen = true;
+		}
 	}
 }
 
