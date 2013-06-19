@@ -18,14 +18,16 @@
 			{/if}
 			{exp:ed_imageresizer image="{article_image}" maxWidth="800" forceWidth="yes" cropratio="16:9" }
 			<div class="text">
-				<div class="text-inner">
-					<h1 class="h1">{title}</h1>
-					<h2 class="h5">By Judy Fujimura, M.A.</h2>
-					{if category_count != 0}
-					<h2>Topics: 
-						{categories backspace="1"}<a href="/articles/category/{category_url_title}">{category_name}</a>,{/categories}
-					</h2>
-					{/if}
+				<div class="text-table">
+					<div class="text-cell">
+						<h1 class="h1">{title}</h1>
+						<h2 class="h5">By Judy Fujimura, M.A.</h2>
+						{if category_count != 0}
+						<h2>Topics: 
+							{categories backspace="1"}<a href="/articles/category/{category_url_title}">{category_name}</a>,{/categories}
+						</h2>
+						{/if}
+					</div>
 				</div>
 			</div>
 		</div>
