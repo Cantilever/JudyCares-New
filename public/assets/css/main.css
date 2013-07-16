@@ -108,6 +108,7 @@ footer .copy { color: rgb(0,68,34); }
 .mod .bd > *:last-child { margin-bottom: 0; }
 .mod .bd > ol { list-style: decimal; font-size: 13px; margin-right: 64px; margin-left: 64px; }
 .mod .bd > h3, .mod .bd > h4, .mod .bd > h5, .mod .bd > h6 { padding-top: 16px; }
+.mod.mod-flush { padding: 0; margin: -12px; }
 
 .headline-block { padding-top: 56.25%; overflow: hidden; position: relative; }
 .headline-block a { text-decoration: underline; }
@@ -155,6 +156,7 @@ dl.info dd.last { margin-bottom: 0; }
 .flag { border-radius: 5px; background: rgb(0,135,68); color: white; font-size: 15px; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; padding: 2px 8px; }
 a:hover .flag { background: rgb(55, 175, 116); }
 
+img.snug { max-width: 100%; }
 
 
 /*
@@ -207,6 +209,7 @@ a:hover .flag { background: rgb(55, 175, 116); }
 
 	.mod-wrapper, .mod { padding: 18px; }
 	.mod[data-padding="extra"] { padding: 48px; }
+	.mod.mod-flush { margin: -24px; }
 	
 	.button.button-primary { font-size: 32px; max-width: 400px; }
 
