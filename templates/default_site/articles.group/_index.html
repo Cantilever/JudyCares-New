@@ -35,12 +35,12 @@
 							{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }<br/>
 							<h2 class="h2">
 								{title}
-								{if article_is_premium OR article_is_video}
+								{if article_is_premium == "Yes" OR article_is_video == "Yes"}
 									<br/>
-									{if article_is_premium}
+									{if article_is_premium == "Yes"}
 										<span class="flag">Premium</span>
 									{/if}
-									{if article_is_video}
+									{if article_is_video == "Yes"}
 										<span class="flag">Video</span>
 									{/if}
 								{/if}
