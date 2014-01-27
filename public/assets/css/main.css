@@ -84,9 +84,18 @@ header { font-weight: 100; position: relative; background: rgb(30,148,89); overf
 header a.logo { float: left; width: 33.33%; background: rgb(0,135,68); text-align: center; display: block; font-family: "brandon-grotesque"; font-size: 20px; font-weight: 500; line-height: 48px; color: white; -webkit-transition: font-size .2s;}
 header a.logo em { font-style: normal; color: rgb(189,231,214); }
 header nav.main-menu li { float: left; width: 33.33%; }
-header nav.main-menu li a { -webkit-transition: background .2s; display: block; height: 48px; line-height: 48px; text-align: center; font-size: 12px; color: white; text-transform: uppercase; letter-spacing: .2em; }
+header nav.main-menu li a { -webkit-transition: background .2s; font-size: 12px; text-transform: uppercase; letter-spacing: .2em; }
 header nav.main-menu li a:hover { background: rgb(70,166,118); }
 header nav.main-menu li a.active { background: rgb(56,160,108); }
+header nav.contact-menu { background: rgb(42,160,113); }
+header nav.contact-menu ul {}
+header nav.contact-menu li { float: left; width: 50%; }
+header nav.contact-menu li a { -webkit-transition: background .2s; }
+header nav.contact-menu li a:hover { background: rgb(70,166,118); }
+header nav.contact-menu li a:active { background: rgb(56,160,108); }
+header nav.contact-menu ul.social-links { letter-spacing: -0.22em; }
+header nav.contact-menu ul.social-links li { float: none; display: inline-block; margin: 0; width: 33.33%;  }
+header nav.contact-menu ul.social-links li a { display: inline-block; width: 100%; }
 
 footer { padding: 24px 24px 20px 24px; font-size: 12px; overflow: hidden; background: rgb(0,135,68); text-align: center; }
 
@@ -144,6 +153,9 @@ ul.tag-list > li a { background: rgb(204, 247, 225); border-radius: 100px; displ
 ul.tag-list > li a:hover { background: rgb(163, 241, 202); }
 ul.tag-list > li a.active { background: rgb(0,135,68); color: white; }
 
+ul.menu-links {}
+ul.menu-links li a { display: block; text-align: center; height: 48px; line-height: 48px; color: white; }
+
 .aux { color: #888; text-align: center; }
 .callout { padding: 32px 12.5%; }
 .meta-bar { border-top: 1px dashed rgb(200, 233, 200); border-bottom: 1px dashed rgb(200, 233, 200); padding: 16px 0; text-align: center; font-size: 16px; line-height: 24px; margin-bottom: 32px; }
@@ -158,6 +170,11 @@ a:hover .flag { background: rgb(55, 175, 116); }
 
 img.snug { display: block; max-width: 100%; margin: 0 auto; }
 
+.s { width: 24px; height: 24px; }
+.s:before { display: inline-block; text-indent: 0px; }
+.s.s-twitter:before { content: 't'; }
+.s.s-facebook:before { content: 'f'; }
+.s.s-linkedin:before { content: 'l'; }
 
 /*
  * Responsive Styles
@@ -196,8 +213,10 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 
 	/* Navigation */
 
-	header a.logo { position: absolute; width: 25%; left: 0; top: 0; height: 100%; line-height: 96px; font-size: 24px; }
-	header nav.main-menu { margin-left: 25%; width: 75%; }
+	header a.logo { position: absolute; width: 25%; left: 0; top: 0; height: 100%; line-height: 144px; font-size: 24px; }
+	header nav.main-menu, header nav.contact-menu { margin-left: 25%; width: 75%; }
+	header nav.contact-menu ul { float: left; width: 66.66%; }
+	header nav.contact-menu ul.social-links { width: 33.33% }
 	header nav.main-menu li { width: 20%; }
 	header nav.main-menu li a { height: 96px; line-height: 96px; }
 	
