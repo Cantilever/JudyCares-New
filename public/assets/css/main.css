@@ -159,7 +159,7 @@ footer nav.contact-menu ul.social-links { letter-spacing: -0.25em;  }
 footer nav.contact-menu ul.social-links li { width: 24px;  }
 footer nav.contact-menu ul.social-links li+li { margin-left: 16px;  }
 footer nav.contact-menu ul.social-links li a { line-height: normal; height: auto; color: white;}
-.copy { text-align: center; color: rgb(0,68,34); background: rgb(220,237,223); background: fixed -webkit-linear-gradient(top, rgba(160, 193, 160,.2), rgba(160, 193, 160,.4)); }
+.copy { text-align: center; color: rgba(0,68,34,0.7); background: rgb(220,237,223); background: fixed -webkit-linear-gradient(top, rgba(160, 193, 160,.2), rgba(160, 193, 160,.4)); }
 
 
 .menu-links { width:100%; }
@@ -287,7 +287,7 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	header nav.main-menu li a { height: 96px; line-height: 96px; }
 	
 	footer nav.footer-menu li { float: left; margin-right: 24px; }
-	footer .copy { text-align: left; }
+	.copy { padding-top: 64px; }
 
 
 	/* Objects */
