@@ -129,7 +129,7 @@ input[type="text"], input[type="password"] { background: rgb(220,237,223); displ
  * Navigation
  */
 
-.user-bar { overflow: hidden; color: white; padding: 8px 16px; background: rgb(71, 190, 142); }
+.user-bar { overflow: hidden; color: white; padding: 8px 24px; background: rgb(71, 190, 142); }
 .user-bar a { color: white; text-decoration: underline; }
 .user-bar a:hover { color: rgb(204,216,210); }
 .user-bar .user-menu { float: right; }
