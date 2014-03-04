@@ -156,8 +156,8 @@ footer nav.footer-menu { margin-bottom: 16px; overflow: hidden; }
 footer nav.footer-menu li a { font-weight: 100; color: white; text-transform: uppercase; letter-spacing: .2em; }
 footer nav.footer-menu li a:hover { color: rgb(204,216,210); }
 footer nav.contact-menu ul.social-links { letter-spacing: -0.25em;  }
-footer nav.contact-menu ul.social-links li { width: 24px;  }
-footer nav.contact-menu ul.social-links li+li { margin-left: 16px;  }
+footer nav.contact-menu ul.social-links li { width: auto;  }
+footer nav.contact-menu ul.social-links li+li { margin-left: 8px;  }
 footer nav.contact-menu ul.social-links li a { line-height: normal; height: auto; color: white;}
 .copy { text-align: center; color: rgba(0,68,34,0.7); background: rgb(220,237,223); background: fixed -webkit-linear-gradient(top, rgba(160, 193, 160,.2), rgba(160, 193, 160,.4)); }
 
@@ -286,7 +286,9 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	header nav.main-menu li { width: 20%; }
 	header nav.main-menu li a { height: 96px; line-height: 96px; }
 	
-	footer nav.footer-menu li { float: left; margin-right: 24px; }
+	footer nav.footer-menu { display: inline-block; margin: 0 auto; }
+	footer nav.footer-menu li { float: left; }
+	footer nav.footer-menu li + li { margin-left: 16px; }
 	.copy { padding-top: 64px; }
 
 
