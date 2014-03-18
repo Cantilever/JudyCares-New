@@ -12,6 +12,20 @@ $(function() {
 			$el: $(this)
 		});
 	});
+    
+    	// decode and replace email address
+	$( '.mailme' ).each(function() {
+
+		var $this = $(this),
+				address = $this.data( 'address' ),
+				decoded;
+
+		if( address ) {
+			var decoded = address.replace(' at ', '@' ).replace(' dot ', '.' );
+			$this.after( "<a href='mailto:" + decoded + "'>" + decoded + "</a>" );
+			$this.remove();
+		}
+	});
 
 	$('section.main').fitVids();
 });
