@@ -40,6 +40,12 @@
 	<div class="mod-wrapper">
 		<div class="mod" data-padding="extra" data-bg-style="white">
 
+				{if external_site_name}
+					<div class="meta-bar">
+						Note: This article was originally posted on {if external_site_link}<a href="http://{external_site_link}">{/if}{external_site_name}{if external_site_link}</a>{/if}.
+					</div>
+				{/if}
+
 				{if article_is_premium == "Yes"}
 			
 					<!-- Premium Article -->
