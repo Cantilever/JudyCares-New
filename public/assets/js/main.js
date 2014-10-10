@@ -45,10 +45,12 @@ FloatingBanner = function(options) {
 	this.threshold = options.threshold || 800;
 
 	var checkPos = function() {
-		if ($(window).scrollTop() > view.threshold && !view.isShowing) {
+		var validPos = ($(window).scrollTop() > view.threshold && $(window).scrollTop() < $(document).height() - $(window).height() - view.threshold/2);
+
+		if (validPos && !view.isShowing) {
 			view.$el.fadeIn();
 			view.isShowing = true;
-		} else if ($(window).scrollTop() <= view.threshold && view.isShowing) {
+		} else if (!validPos && view.isShowing) {
 			view.$el.fadeOut();
 			view.isShowing = false;
 		}
