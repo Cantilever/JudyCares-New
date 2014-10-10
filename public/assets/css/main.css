@@ -110,6 +110,7 @@ em { font-style: italic; }
 
 .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "brandon-grotesque", sans-serif; }
 .h1 { font-weight: 700; font-size: 24px; line-height: 24px; }
+.h1-alt { font-size: 20px; line-height: 20px; }
 .h2 { font-weight: 400; font-size: 32px; line-height: 32px; }
 .h3 { font-weight: 700; font-size: 24px; line-height: 24px; }
 .h4 { font-weight: 700; font-size: 14px; line-height: 14px; text-transform: uppercase; letter-spacing: .2em; color: #444; }
@@ -143,7 +144,7 @@ header nav.main-menu li { float: left; width: 33.33%; }
 header nav.main-menu li a { -webkit-transition: background .2s; font-size: 12px; text-transform: uppercase; letter-spacing: .2em; }
 header nav.main-menu li a:hover { background: rgb(70,166,118); }
 header nav.main-menu li a.active { background: rgb(56,160,108); }
-header nav.contact-menu { background: rgb(42,160,113); }
+header nav.contact-menu { display: none; background: rgb(42,160,113); }
 header nav.contact-menu ul { height: 48px; }
 header nav.contact-menu ul.social-links { text-align: center; }
 header nav.contact-menu ul.social-links li { width: 16px; padding: 0 10px; }
@@ -198,7 +199,7 @@ footer .menu-links li a:hover { opacity: 0.6; }
 .headline-block .text a { color: white; }
 .headline-block .text .text-table { display: table; position: absolute; top: 0; left:0; width: 100%; height: 100%; }
 .headline-block .text .text-cell { display: table-cell; vertical-align: middle; text-align: center; z-index: 1; position: relative; animation: fadein 2s; -moz-animation: fadein 2s; -webkit-animation: fadein 1s; -o-animation: fadein 2s; }
-.headline-block .text .text-cell h1 { margin-bottom: 8px; line-height: 1em; }
+.headline-block .text .text-cell h1 { margin-bottom: 8px; line-height: 1.2em; }
 .headline-block[data-alignment="right"] .text { left: 55%; width: 40%; }
 .headline-block[data-alignment="right"] .text-cell { text-align: left; }
 .headline-block .text:after { content: ""; display: block; padding-top: 56.25%; }
@@ -237,7 +238,12 @@ dl.info dd.last { margin-bottom: 0; }
 a:hover .flag { background: rgb(55, 175, 116); }
 
 img.snug { display: block; max-width: 100%; margin: 0 auto; }
-
+.mod .bd > img.img-center {
+	display: block;
+	width: 80%;
+	height: auto;
+	margin: 64px auto;
+}
 
 
 /*
@@ -273,13 +279,15 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	body { padding: 24px; font-size: 15px; line-height: 25px; }
 
 	.h1 { font-size: 48px; line-height: 48px; }
-	
+	.h1-alt { font-size: 36px; line-height: 36px; }
+
 
 	/* Navigation */
 
 	header a.logo { position: absolute; width: 25%; left: 0; top: 0; height: 100%; line-height: 144px; font-size: 24px; }
 	header nav.main-menu, header nav.contact-menu { margin-left: 25%; width: 75%; }
-	header nav.contact-menu ul { float: left; width: 60%; max-width: 340px; }
+	header nav.contact-menu { display: block; }
+	header nav.contact-menu ul {  float: left; width: 60%; max-width: 340px; }
 	header nav.contact-menu ul li { width: 50%; }
 	header nav.contact-menu ul li a { width: auto; white-space: nowrap; }
 	header nav.contact-menu ul.social-links { width: auto; float: right; text-align: right; padding-right: 16px;}
@@ -312,8 +320,9 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	/* Global Styles */
 
 	.h1 { font-size: 64px; line-height: 64px; }
+	.h1-alt { font-size: 48px; line-height: 48px; }
 
-	.wrapper { width: 880px; margin: 0 auto; }
+	.wrapper { width: 960px; margin: 0 auto; }
 
 
 	/* Navigation */
