@@ -13,6 +13,12 @@ $(function() {
 		});
 	});
     
+	$('.floating-banner').each(function() {
+		var obj = new FloatingBanner({
+			$el: $(this)
+		});
+	});
+
     	// decode and replace email address
 	$( '.mailme' ).each(function() {
 
@@ -29,6 +35,30 @@ $(function() {
 
 	$('section.main').fitVids();
 });
+
+FloatingBanner = function(options) {
+
+	var view = this;
+
+	this.isShowing = false;
+	this.$el = options.$el;
+	this.threshold = options.threshold || 1000;
+
+	var checkPos = function() {
+		if ($(window).scrollTop() > view.threshold && !view.isShowing) {
+			view.$el.fadeIn();
+			view.isShowing = true;
+		} else if ($(window).scrollTop() <= view.threshold && view.isShowing) {
+			view.$el.fadeOut();
+			view.isShowing = false;
+		}
+	}
+
+	checkPos();
+	$(window).on("scroll resize", function() {
+		checkPos();
+	});
+}
 
 Map = function(options) {
 	var map = this, geocoder = new google.maps.Geocoder();
