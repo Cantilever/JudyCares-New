@@ -240,9 +240,9 @@ a:hover .flag { background: rgb(55, 175, 116); }
 img.snug { display: block; max-width: 100%; margin: 0 auto; }
 .mod .bd > img.img-center {
 	display: block;
-	width: 80%;
+	max-width: 100%;
 	height: auto;
-	margin: 64px auto;
+	margin: 32px auto;
 }
 
 .floating-banner {
@@ -255,7 +255,7 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	padding: 16px;
 	text-align: center;
 	font-size: 18px;
-	line-height: 18px;
+	line-height: 24px;
 }
 
 .floating-banner { color: white; }
@@ -329,6 +329,11 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	.callout { padding-left: 25%; padding-right: 25%; }
 
 	.meta-bar { font-size: 24px; line-height: 32px;}
+
+	.mod .bd > img.img-center {
+		margin-top: 64px;
+		margin-bottom: 64px;
+	}
 
 }
 
