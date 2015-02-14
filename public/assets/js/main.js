@@ -42,7 +42,7 @@ FloatingBanner = function(options) {
 
 	this.isShowing = false;
 	this.$el = options.$el;
-	this.threshold = options.threshold || 800;
+	this.threshold = options.threshold || 0;
 
 	var checkPos = function() {
 		var validPos = ($(window).scrollTop() > view.threshold && $(window).scrollTop() < $(document).height() - $(window).height() - view.threshold/2);
