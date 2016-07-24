@@ -19,7 +19,7 @@ $config['cp_url'] = '/heart.php';
 $config['doc_url'] = "http://ellislab.com/expressionengine/user-guide/";
 $config['is_system_on'] = "y";
 $config['allow_extensions'] = 'y';
-$config['site_label'] = 'JudyCares';
+$config['site_label'] = 'Judy Fujimura Psychotherapy, Princeton, NJ';
 $config['cookie_prefix'] = '';
 
 $config['sc_paypal_account'] = "store@judycares.com";

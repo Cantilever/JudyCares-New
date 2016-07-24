@@ -1,56 +1,72 @@
 {embed="_embeds/_header" html_title="{if segment_2 == ""}Articles{if:else}{segment_3_category_name}{/if}" meta_description="Articles about Coupling, Family, Parenting, and more by Judy Fujimura, M.A."}
 
 <div class="mod-wrapper">
-	<div class="mod" data-bg-style="white">
-		<div class="bd">
-			<ul class="list" data-padding="wide">
-				<li>
-					<ul class="tag-list">
-						<li>
-							<a
-							{if segment_2 == ""}
-								class="active"
-							{if:else}
-								href="/articles/"
-							{/if}
-							>All Posts</a>
-						</li>
-						{exp:channel:categories style="linear" category_group="1"}
-						<li{if count == total_results} class="last"{/if}>
-							<a
-							{if segment_3 == "{category_url_title}"}
-								class="active"
-							{if:else}
-								href="/articles/category/{category_url_title}"
-							{/if}
-							>{category_name}</a>
-						</li>
-						{/exp:channel:categories}
-					</ul>
-				</li>
-				{exp:channel:entries channel="articles"{if segment_3} category="{segment_3_category_id}"{/if}}
-				<li{if count == total_results} class="last"{/if}>
-					<div class="article-preview">
-						<a href="/articles/{url_title}/">
-							{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }<br/>
-							<h2 class="h2">
-								{title}
-								{if article_is_premium == "Yes" OR article_is_video == "Yes"}
-									<br/>
-									{if article_is_premium == "Yes"}
-										<span class="flag">Premium</span>
-									{/if}
-									{if article_is_video == "Yes"}
-										<span class="flag">Video</span>
-									{/if}
+	<div class="row">
+		<div class="mod">
+			<div class="meta-bar">
+				Judy Fujimura also writes for <a target="_blank" href="http://yoffielife.com/author/judith/">YoffieLife</a>, a health and wellness website. <a target="_blank" href="http://yoffielife.com/author/judith/">Read her articles here</a>!
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="mod" data-bg-style="white">
+			<div class="bd">
+				<ul class="list" data-padding="wide">
+					<li>
+						<ul class="tag-list">
+							<li>
+								<a
+								{if segment_2 == ""}
+									class="active"
+								{if:else}
+									href="/articles/"
 								{/if}
-							</h2>
-						</a>
-						<h3>{article_subtitle}</h3>
-					</div>
-				</li>
-				{/exp:channel:entries}
-			</ul>
+								>All Posts</a>
+							</li>
+							{exp:channel:categories style="linear" category_group="1"}
+							<li{if count == total_results} class="last"{/if}>
+								<a
+								{if segment_3 == "{category_url_title}"}
+									class="active"
+								{if:else}
+									href="/articles/category/{category_url_title}"
+								{/if}
+								>{category_name}</a>
+							</li>
+							{/exp:channel:categories}
+						</ul>
+					</li>
+					{exp:channel:entries channel="articles"{if segment_3} category="{segment_3_category_id}"{/if}}
+					<li{if count == total_results} class="last"{/if}>
+						<div class="article-preview">
+							<a href="/articles/{url_title}/">
+								{exp:ed_imageresizer image="{article_image}" maxWidth="240" forceWidth="yes" cropratio="4:3" }<br/>
+								<h2 class="h2">
+									{title}
+									{if article_is_premium == "Yes" OR article_is_video == "Yes"}
+										<br/>
+										{if article_is_premium == "Yes"}
+											<span class="flag">Premium</span>
+										{/if}
+										{if article_is_video == "Yes"}
+											<span class="flag">Video</span>
+										{/if}
+									{/if}
+								</h2>
+							</a>
+							<h3>{article_subtitle}</h3>
+						</div>
+					</li>
+					{/exp:channel:entries}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="mod">
+			<div class="meta-bar">
+				Judy Fujimura also writes for <a target="_blank" href="http://yoffielife.com/author/judith/">YoffieLife</a>, a health and wellness website. <a target="_blank" href="http://yoffielife.com/author/judith/">Read her articles here</a>!
+			</div>
 		</div>
 	</div>
 </div>
