@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+
+<url>
+<loc>{site_url}</loc>
+<lastmod>{exp:channel:entries channel="projects|products|articles|architect_resources|static_pages" limit="1" dynamic="off" disable="custom_fields|categories|member_data|pagination|trackbacks"}{gmt_edit_date format="{DATE_W3C}"}{/exp:channel:entries}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.1</priority>
+</url>
+
+<url>
+<loc>{site_url}/articles/</loc>
+<lastmod>{exp:channel:entries channel="articles" limit="1" dynamic="off" disable="custom_fields|categories|member_data|pagination|trackbacks"}{gmt_edit_date format="{DATE_W3C}"}{/exp:channel:entries}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.2</priority>
+</url>
+
+{exp:channel:entries channel="articles" dynamic="off" disable="member_data|pagination|trackbacks"}
+<url>
+<loc>{site_url}/articles/{url_title}/</loc>
+<lastmod>{gmt_edit_date format="{DATE_W3C}"}</lastmod>
+<changefreq>yearly</changefreq>
+<priority>0.2</priority>
+</url>
+{/exp:channel:entries}
+
+<url>
+<loc>{site_url}/about/</loc>
+<changefreq>yearly</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
+<loc>{site_url}/contact/</loc>
+<changefreq>yearly</changefreq>
+<priority>1</priority>
+</url>
+
+<url>
+<loc>{site_url}/speaking/</loc>
+<changefreq>yearly</changefreq>
+<priority>0</priority>
+</url>
+
+<url>
+<loc>{site_url}/therapy/</loc>
+<changefreq>yearly</changefreq>
+<priority>1</priority>
+</url>
+
+</urlset>

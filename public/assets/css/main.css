@@ -168,7 +168,7 @@ footer nav.contact-menu ul.social-links li a { line-height: normal; height: auto
 .menu-links li a { -webkit-transition: background .2s; }
 ul.menu-links.social-links { letter-spacing: -0.22em; }
 ul.menu-links.social-links li { float: none; display: inline-block; margin: 0; width: 33.33%;  }
-ul.menu-links.social-links li a { display: inline-block; padding: 0 10px; }
+ul.menu-links.social-links li a, ul.menu-links.social-links li span { display: inline-block; padding: 0 10px; }
 
 header .menu-links li a:hover { background: rgb(70,166,118); }
 header .menu-links li a:active { background: rgb(56,160,108); }
@@ -223,7 +223,7 @@ ul.tag-list > li a:hover { background: rgb(163, 241, 202); }
 ul.tag-list > li a.active { background: rgb(0,135,68); color: white; }
 
 ul.menu-links {}
-ul.menu-links li a { display: block; text-align: center; height: 48px; line-height: 48px; color: white; }
+ul.menu-links li a, ul.menu-links li span { display: block; text-align: center; height: 48px; line-height: 48px; color: white; }
 
 .aux { color: #888; text-align: center; }
 .callout { padding: 32px 12.5%; }
@@ -267,7 +267,7 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
  * Responsive Styles
  */
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 720px) {
 	
 	/* Grid */
 
@@ -304,12 +304,12 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	header a.logo { position: absolute; width: 25%; left: 0; top: 0; height: 100%; line-height: 144px; font-size: 24px; }
 	header nav.main-menu, header nav.contact-menu { margin-left: 25%; width: 75%; }
 	header nav.contact-menu { display: block; }
-	header nav.contact-menu ul {  float: left; width: 60%; max-width: 340px; }
-	header nav.contact-menu ul li { width: 50%; }
-	header nav.contact-menu ul li a { width: auto; white-space: nowrap; }
+	header nav.contact-menu ul {  float: left; width: 80%; max-width: 460px; }
+	header nav.contact-menu ul li { width: 33%; }
+	header nav.contact-menu ul li a, header nav.contact-menu ul li span { width: auto; white-space: nowrap; }
 	header nav.contact-menu ul.social-links { width: auto; float: right; text-align: right; padding-right: 16px;}
 	header nav.main-menu li { width: 20%; }
-	header nav.main-menu li a { height: 96px; line-height: 96px; }
+	header nav.main-menu li a, header nav.main-menu li span { height: 96px; line-height: 96px; }
 	
 	footer nav.footer-menu { display: inline-block; margin: 0 auto; }
 	footer nav.footer-menu li { float: left; }
@@ -342,7 +342,7 @@ img.snug { display: block; max-width: 100%; margin: 0 auto; }
 	/* Global Styles */
 
 	.h1 { font-size: 64px; line-height: 64px; }
-	.h1-alt { font-size: 48px; line-height: 48px; }
+	.h1-alt { font-size: 42px; line-height: 42px; }
 
 	.wrapper { width: 960px; margin: 0 auto; }
 
