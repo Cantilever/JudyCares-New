@@ -21,9 +21,9 @@
 				<div class="text-table">
 					<div class="text-cell">
 						<h1 class="h1">{title}</h1>
-						<h2 class="h5">By Judith Beebe Fujimura, M.A.</h2>
+						<h2 class="h5">By Judith Beebe, M.A.</h2>
 						{if category_count != 0}
-						<h2>Topics: 
+						<h2>Topics:
 							{categories backspace="1"}<a href="/articles/category/{category_url_title}">{category_name}</a>,{/categories}
 						</h2>
 						{/if}
@@ -47,11 +47,11 @@
 				{/if}
 
 				{if article_is_premium == "Yes"}
-			
+
 					<!-- Premium Article -->
 
 					{if no_access}
-	
+
 						<!-- User doesn't have access to this, or isn't logged in -->
 
 						<?php if ($login_stage) : ?>
@@ -84,7 +84,7 @@
 							</div>
 
 						<?php else : ?>
-						
+
 							<!-- User isn't logging in, so show them a purchase button which is either real or will take them to login -->
 
 							<div class="hd">
@@ -93,7 +93,7 @@
 								</div>
 							</div>
 							<div class="bd">
-								
+
 								{premium_article_blurb}
 
 								{exp:simple_commerce:purchase entry_id="{entry_id}" success="/articles/{url_title}" cancel="/articles/{url_title}"}
@@ -124,7 +124,7 @@
 							</div>
 
 						<?php endif; ?>
-					
+
 					{if:else}
 
 						<!-- User purchased this -->
@@ -144,8 +144,8 @@
 
 					<div class="bd">
 						{article_body}
-					</div>	
-				
+					</div>
+
 				{/if}
 
 		</div>

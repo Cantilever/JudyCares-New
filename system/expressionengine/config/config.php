@@ -19,7 +19,7 @@ $config['cp_url'] = '/heart.php';
 $config['doc_url'] = "http://ellislab.com/expressionengine/user-guide/";
 $config['is_system_on'] = "y";
 $config['allow_extensions'] = 'y';
-$config['site_label'] = 'Judith Beebe Fujimura Psychotherapy, Princeton, NJ';
+$config['site_label'] = 'Judith Beebe Psychotherapy, Princeton, NJ';
 $config['cookie_prefix'] = '';
 
 $config['sc_paypal_account'] = "store@judycares.com";
@@ -227,7 +227,7 @@ $config['function_trigger'] = 'M';
 | Error Logging Threshold
 |--------------------------------------------------------------------------
 |
-| If you have enabled error logging, you can set an error threshold to 
+| If you have enabled error logging, you can set an error threshold to
 | determine what gets logged. Threshold options are:
 |
 |	0 = Disables logging, Error logging TURNED OFF
